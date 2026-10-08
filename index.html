@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Neha ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Poppins","Segoe UI",sans-serif;
+  background:#09070d;
+  color:white;
+  overflow-x:hidden;
+}
+
+.screen{
+  min-height:100vh;
+  width:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:25px;
+}
+
+.screen.active{
+  display:flex;
+}
+
+.screen::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,70,150,.14),transparent 30%),
+    radial-gradient(circle at 80% 80%,rgba(160,70,255,.12),transparent 30%);
+  pointer-events:none;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 1px);
+  background-size:65px 65px;
+  opacity:.25;
+  animation:starsMove 12s linear infinite;
+}
+
+@keyframes starsMove{
+  from{transform:translateY(0);}
+  to{transform:translateY(-65px);}
+}
+
+/* =========================
+   FIRST PAGE
+========================= */
+
+.first-content{
+  text-align:center;
+  z-index:5;
+  max-width:650px;
+}
+
+.first-heart{
+  font-size:90px;
+  animation:heartBeat 1.5s infinite;
+  filter:drop-shadow(0 0 25px rgba(255,80,150,.6));
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.12);}
+}
+
+.first-content .small-title{
+  font-size:13px;
+  letter-spacing:5px;
+  color:#f6b4d0;
+  margin-top:15px;
+}
+
+.first-content h1{
+  font-size:clamp(55px,15vw,105px);
+  margin:5px 0;
+  font-family:Georgia,serif;
+  font-style:italic;
+  background:linear-gradient(135deg,#fff,#ff8fbd,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.first-content .sub{
+  color:#ddd;
+  font-size:15px;
+  margin:10px 0;
+}
+
+.first-content .memories{
+  color:#a9a3ad;
+  font-size:13px;
+  margin-bottom:30px;
+}
+
+.main-btn{
+  border:1px solid rgba(255,255,255,.25);
+  background:linear-gradient(135deg,#ff4f9a,#a94dff);
+  color:white;
+  padding:16px 28px;
+  border-radius:40px;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:1px;
+  cursor:pointer;
+  box-shadow:0 10px 35px rgba(255,50,150,.3);
+  transition:.3s;
+  position:relative;
+  z-index:10;
+}
+
+.main-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.float-balloon{
+  position:absolute;
+  font-size:48px;
+  opacity:.7;
+  animation:balloonFloat 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.b1{left:8%;top:15%;}
+.b2{right:10%;top:22%;animation-delay:1.5s;}
+.b3{left:15%;bottom:12%;animation-delay:3s;}
+
+@keyframes balloonFloat{
+  0%,100%{transform:translateY(0) rotate(-5deg);}
+  50%{transform:translateY(-35px) rotate(7deg);}
+}
+
+.float-heart{
+  position:absolute;
+  font-size:32px;
+  opacity:.65;
+  animation:heartFloat 5s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.h1{right:18%;top:12%;}
+.h2{left:7%;top:55%;animation-delay:1.5s;}
+.h3{right:8%;bottom:14%;animation-delay:2.5s;}
+
+@keyframes heartFloat{
+  0%,100%{transform:translateY(0) rotate(0);}
+  50%{transform:translateY(-25px) rotate(12deg);}
+}
+
+.sparkle{
+  position:absolute;
+  color:#fff;
+  animation:sparkleTwinkle 2s infinite;
+  pointer-events:none;
+}
+
+.s1{left:20%;top:18%;}
+.s2{right:25%;top:35%;animation-delay:.5s;}
+.s3{left:25%;bottom:20%;animation-delay:1s;}
+.s4{right:20%;bottom:30%;animation-delay:1.5s;}
+
+@keyframes sparkleTwinkle{
+  0%,100%{opacity:.2;transform:scale(.7);}
+  50%{opacity:1;transform:scale(1.3);}
+}
+
+/* =========================
+   BALLOON GAME
+========================= */
+
+.game-content{
+  width:100%;
+  height:100vh;
+  text-align:center;
+  position:relative;
+  z-index:3;
+  padding-top:45px;
+}
+
+.game-content h2{
+  font-family:Georgia,serif;
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.game-content p{
+  color:#bbb;
+  font-size:14px;
+}
+
+.counter{
+  margin-top:15px;
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  color:#ff8fbd;
+  font-weight:bold;
+}
+
+.game-balloon{
+  position:absolute;
+  font-size:62px;
+  cursor:pointer;
+  user-select:none;
+  transition:.2s;
+  animation:gameFloat 3s ease-in-out infinite;
+  filter:drop-shadow(0 10px 10px rgba(255,70,150,.2));
+  z-index:10;
+}
+
+.game-balloon:hover{
+  transform:scale(1.15);
+}
+
+.balloon1{
+  left:5%;
+  top:22%;
+}
+
+.balloon2{
+  right:5%;
+  top:25%;
+  animation-delay:.5s;
+}
+
+.balloon3{
+  left:6%;
+  top:58%;
+  animation-delay:1s;
+}
+
+.balloon4{
+  right:6%;
+  top:63%;
+  animation-delay:1.5s;
+}
+
+.balloon5{
+  left:50%;
+  top:78%;
+  transform:translateX(-50%);
+  animation-delay:2s;
+}
+
+@keyframes gameFloat{
+  0%,100%{margin-top:0;}
+  50%{margin-top:-18px;}
+}
+
+.pop{
+  animation:balloonPop .35s forwards !important;
+}
+
+@keyframes balloonPop{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.5);}
+  100%{transform:scale(0);opacity:0;}
+}
+
+.mini-heart{
+  position:absolute;
+  pointer-events:none;
+  animation:miniHeart 1s forwards;
+  font-size:20px;
+  z-index:20;
+}
+
+@keyframes miniHeart{
+  0%{
+    opacity:1;
+    transform:translate(0,0) scale(1);
+  }
+  100%{
+    opacity:0;
+    transform:translate(var(--x),var(--y)) scale(.4);
+  }
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-screen{
+  flex-direction:column;
+  text-align:center;
+}
+
+.envelope-title{
+  font-family:Georgia,serif;
+  font-size:27px;
+  margin-bottom:35px;
+}
+
+.envelope{
+  width:290px;
+  height:190px;
+  position:relative;
+  cursor:pointer;
+  perspective:800px;
+  z-index:10;
+}
+
+.envelope-back{
+  position:absolute;
+  inset:0;
+  background:#d94d83;
+  border-radius:8px;
+  box-shadow:0 20px 60px rgba(255,50,130,.25);
+}
+
+.envelope-paper{
+  position:absolute;
+  width:240px;
+  height:150px;
+  background:#fff8f2;
+  color:#3a2730;
+  left:25px;
+  top:20px;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia,serif;
+  font-size:20px;
+  transition:1s;
+  z-index:2;
+}
+
+.envelope-front{
+  position:absolute;
+  inset:0;
+  background:#e96699;
+  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
+  z-index:3;
+  border-radius:8px;
+}
+
+.envelope-flap{
+  position:absolute;
+  inset:0;
+  background:#f083aa;
+  clip-path:polygon(0 0,100% 0,50% 58%);
+  transform-origin:top;
+  transition:1s;
+  z-index:4;
+  border-radius:8px;
+}
+
+.envelope.open .envelope-flap{
+  transform:rotateX(180deg);
+  z-index:1;
+}
+
+.envelope.open .envelope-paper{
+  transform:translateY(-120px);
+  z-index:5;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-screen{
+  align-items:flex-start;
+  padding-top:35px;
+  padding-bottom:35px;
+  overflow-y:auto;
+}
+
+.letter{
+  width:min(700px,100%);
+  background:linear-gradient(
+    rgba(255,248,240,.98),
+    rgba(255,248,240,.98)
+  );
+  color:#3b2930;
+  padding:35px 28px;
+  border-radius:18px;
+  box-shadow:0 25px 80px rgba(0,0,0,.45);
+  position:relative;
+  animation:letterAppear .8s ease;
+  z-index:5;
+}
+
+@keyframes letterAppear{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.letter::before{
+  content:"";
+  position:absolute;
+  inset:10px;
+  border:1px solid rgba(180,100,120,.2);
+  border-radius:12px;
+  pointer-events:none;
+}
+
+.letter h2{
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:29px;
+  color:#8f3157;
+  margin-bottom:25px;
+}
+
+.letter .dear{
+  font-family:Georgia,serif;
+  font-size:20px;
+  margin-bottom:18px;
+}
+
+.letter p{
+  font-family:Georgia,"Noto Serif Devanagari",serif;
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:15px;
+}
+
+.signature{
+  text-align:right;
+  font-family:Georgia,serif;
+  font-style:italic;
+  margin-top:25px;
+  color:#74324c;
+}
+
+.letter-btn{
+  display:block;
+  margin:30px auto 0;
+  border:none;
+  padding:14px 24px;
+  border-radius:30px;
+  background:#8f3157;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  position:relative;
+  z-index:10;
+}
+
+/* =========================
+   FINAL PANDA
+========================= */
+
+.final-screen{
+  flex-direction:column;
+  text-align:center;
+}
+
+.panda{
+  position:relative;
+  width:230px;
+  height:300px;
+  margin-bottom:25px;
+  animation:pandaFloat 3s ease-in-out infinite;
+}
+
+@keyframes pandaFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+
+.panda-ear{
+  position:absolute;
+  width:65px;
+  height:65px;
+  background:#111;
+  border-radius:50%;
+  top:20px;
+  z-index:1;
+}
+
+.panda-ear-left{left:20px;}
+.panda-ear-right{right:20px;}
+
+.panda-face{
+  position:absolute;
+  width:185px;
+  height:170px;
+  background:#fff;
+  border-radius:50%;
+  left:22px;
+  top:35px;
+  z-index:2;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.panda-eye{
+  position:absolute;
+  width:38px;
+  height:55px;
+  background:#111;
+  border-radius:50%;
+  top:52px;
+}
+
+.panda-eye-left{
+  left:38px;
+  transform:rotate(35deg);
+}
+
+.panda-eye-right{
+  right:38px;
+  transform:rotate(-35deg);
+}
+
+.panda-eye::after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50%;
+  top:10px;
+  left:9px;
+}
+
+.panda-nose{
+  position:absolute;
+  width:20px;
+  height:14px;
+  background:#111;
+  border-radius:50%;
+  top:105px;
+  left:82px;
+}
+
+.panda-mouth{
+  position:absolute;
+  width:30px;
+  height:15px;
+  border-bottom:3px solid #111;
+  border-radius:50%;
+  top:116px;
+  left:77px;
+}
+
+.panda-cheek{
+  position:absolute;
+  width:28px;
+  height:15px;
+  background:#ff9dbd;
+  border-radius:50%;
+  top:112px;
+  opacity:.6;
+}
+
+.panda-cheek-left{left:18px;}
+.panda-cheek-right{right:18px;}
+
+.panda-body{
+  position:absolute;
+  width:150px;
+  height:125px;
+  background:#111;
+  border-radius:70px 70px 45px 45px;
+  left:40px;
+  top:185px;
+}
+
+.panda-arm{
+  position:absolute;
+  width:48px;
+  height:90px;
+  background:#111;
+  border-radius:40px;
+  top:195px;
+}
+
+.panda-arm.left{
+  left:18px;
+  transform:rotate(25deg);
+}
+
+.panda-arm.right{
+  right:18px;
+  transform:rotate(-25deg);
+}
+
+.panda-heart{
+  position:absolute;
+  font-size:42px;
+  left:94px;
+  top:210px;
+  z-index:4;
+  animation:heartBeat 1.3s infinite;
+}
+
+.final-screen h1{
+  font-family:Georgia,serif;
+  font-size:35px;
+  margin-bottom:18px;
+  background:linear-gradient(90deg,#fff,#ff9bc5,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.final-message{
+  max-width:500px;
+  color:#ddd;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.final-message p{
+  margin-bottom:7px;
+}
+
+.credit{
+  margin-top:25px;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#8e8791;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+  position:fixed;
+  top:-20px;
+  z-index:999;
+  animation:confettiFall 2.5s linear forwards;
+  pointer-events:none;
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+  .first-heart{
+    font-size:75px;
+  }
+
+  .first-content h1{
+    font-size:65px;
+  }
+
+  .game-content h2{
+    font-size:27px;
+  }
+
+  .game-balloon{
+    font-size:52px;
+  }
+
+  .letter{
+    padding:30px 20px;
+  }
+
+  .letter p{
+    font-size:15px;
+    line-height:1.85;
+  }
+
+  .envelope-title{
+    font-size:23px;
+  }
+
+  .final-screen h1{
+    font-size:29px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     FIRST PAGE
+========================= -->
+
+<section class="screen active" id="firstScreen">
+
+  <div class="stars"></div>
+
+  <div class="float-balloon b1">🎈</div>
+  <div class="float-balloon b2">🎈</div>
+  <div class="float-balloon b3">🎈</div>
+
+  <div class="float-heart h1">🩷</div>
+  <div class="float-heart h2">💗</div>
+  <div class="float-heart h3">💕</div>
+
+  <div class="sparkle s1">✦</div>
+  <div class="sparkle s2">✧</div>
+  <div class="sparkle s3">✦</div>
+  <div class="sparkle s4">✧</div>
+
+  <div class="first-content">
+
+    <div class="first-heart">🩷</div>
+
+    <div class="small-title">
+      A LITTLE SURPRISE FOR
+    </div>
+
+    <h1>Neha</h1>
+
+    <div class="sub">
+      Something special is waiting for you... ✨
+    </div>
+
+    <div class="memories">
+      Made with a little love & lots of memories. 🫶🏻
+    </div>
+
+    <button
+      type="button"
+      class="main-btn"
+      onclick="openBalloonGame()">
+      OPEN YOUR SURPRISE 💌
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     BALLOON GAME
+========================= -->
+
+<section class="screen" id="gameScreen">
+
+  <div class="stars"></div>
+
+  <div class="game-content">
+
+    <h2>One little game first 🎈</h2>
+
+    <p>
+      Hit all 5 balloons to open your letter ✨
+    </p>
+
+    <div class="counter" id="counter">
+      0 / 5
+    </div>
+
+    <div
+      class="game-balloon balloon1"
+      onclick="popBalloon(this)">
+      🎈
+    </div>
+
+    <div
+      class="game-balloon balloon2"
+      onclick="popBalloon(this)">
+      🎈
+    </div>
+
+    <div
+      class="game-balloon balloon3"
+      onclick="popBalloon(this)">
+      🎈
+    </div>
+
+    <div
+      class="game-balloon balloon4"
+      onclick="popBalloon(this)">
+      🎈
+    </div>
+
+    <div
+      class="game-balloon balloon5"
+      onclick="popBalloon(this)">
+      🎈
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ENVELOPE
+========================= -->
+
+<section class="screen envelope-screen" id="envelopeScreen">
+
+  <div class="stars"></div>
+
+  <div class="envelope-title">
+    I made something special for you... 🥺🩷
+  </div>
+
+  <div
+    class="envelope"
+    id="envelope"
+    onclick="openEnvelope()">
+
+    <div class="envelope-back"></div>
+
+    <div class="envelope-paper">
+      For Bestie 🩷
+    </div>
+
+    <div class="envelope-front"></div>
+
+    <div class="envelope-flap"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section class="screen letter-screen" id="letterScreen">
+
+  <div class="letter">
+
+    <h2>A Letter For You 💌</h2>
+
+    <div class="dear">
+      Dear Neha,
+    </div>
+
+    <p>
+      काही माणसं आपल्या आयुष्यात येतात आणि नकळत आपल्या आयुष्याचा एक सुंदर भाग बनून जातात… तू माझ्यासाठी अशीच एक व्यक्ती आहेस. ❤️
+    </p>
+
+    <p>
+      आपल्या friendship मध्ये फक्त हसण्याचे क्षण नाहीत, तर काही भांडणं, गैरसमज, न बोललेले शब्द आणि असंख्य सुंदर आठवणीही आहेत. 🥺
+    </p>
+
+    <p>
+      काळ बदलला, गोष्टी बदलल्या किंवा आपल्यात अंतर आलं, तरी आपल्या friendship च्या आठवणींची किंमत माझ्यासाठी कधीच कमी होणार नाही.
+    </p>
+
+    <p>
+      तू माझ्या आयुष्यात आलीस आणि माझ्या journey चा एक खास chapter बनलीस, यासाठी मी नेहमी grateful राहीन. 🫶🏻
+    </p>
+
+    <p>
+      आज तुझ्या birthday ला फक्त एवढंच wish करतो—तुझं प्रत्येक स्वप्न पूर्ण होवो, तू नेहमी खुश राहा आणि तुझ्या चेहऱ्यावरचं smile कधीच कमी होऊ नये. ❤️
+    </p>
+
+    <p>
+      <strong>Happy Birthday, Neha. ❤️🎂</strong>
+    </p>
+
+    <p>
+      काही माणसं कायम सोबत राहण्यासाठी येत नाहीत… पण त्यांच्या आठवणी मात्र कायम मनात राहतात. तू माझ्यासाठी अशीच एक सुंदर आठवण आहेस. 🫶🏻
+    </p>
+
+    <div class="signature">
+      Always wishing the best for you ❤️<br>
+      — Shubham
+    </div>
+
+    <button
+      type="button"
+      class="letter-btn"
+      onclick="showFinal()">
+      ONE LAST THING 🐼❤️
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL PANDA
+========================= -->
+
+<section class="screen final-screen" id="finalScreen">
+
+  <div class="stars"></div>
+
+  <div class="panda">
+
+    <div class="panda-ear panda-ear-left"></div>
+    <div class="panda-ear panda-ear-right"></div>
+
+    <div class="panda-face">
+
+      <div class="panda-eye panda-eye-left"></div>
+      <div class="panda-eye panda-eye-right"></div>
+
+      <div class="panda-nose"></div>
+      <div class="panda-mouth"></div>
+
+      <div class="panda-cheek panda-cheek-left"></div>
+      <div class="panda-cheek panda-cheek-right"></div>
+
+    </div>
+
+    <div class="panda-body"></div>
+
+    <div class="panda-arm left"></div>
+    <div class="panda-arm right"></div>
+
+    <div class="panda-heart">
+      🤍
+    </div>
+
+  </div>
+
+  <h1>
+    Happy Birthday, Neha 🤍
+  </h1>
+
+  <div class="final-message">
+
+    <p>
+      Happy birthday to my bestie! 🤍
+    </p>
+
+    <p>
+      I can't imagine life without you. 🥺🤍
+    </p>
+
+    <p>
+      I'm so grateful you came into my life when you did. 💯❤️
+    </p>
+
+    <p>
+      You understand me like nobody else. ☺️
+    </p>
+
+  </div>
+
+  <div class="credit">
+    MADE WITH ✨ BY SHUBHYA
+  </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   SCREEN CHANGE
+========================= */
+
+function showScreen(id){
+
+  document.querySelectorAll(".screen").forEach(function(screen){
+    screen.classList.remove("active");
+  });
+
+  var target = document.getElementById(id);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  window.scrollTo(0,0);
+}
+
+
+/* =========================
+   OPEN BALLOON GAME
+========================= */
+
+function openBalloonGame(){
+
+  showScreen("gameScreen");
+
+  createBalloons();
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+var popped = 0;
+
+function createBalloons(){
+
+  popped = 0;
+
+  var counter = document.getElementById("counter");
+
+  if(counter){
+    counter.innerText = "0 / 5";
+  }
+
+  document.querySelectorAll(".game-balloon").forEach(function(balloon){
+
+    balloon.classList.remove("pop");
+
+    balloon.style.display = "block";
+
+  });
+
+}
+
+
+/* =========================
+   POP BALLOON
+========================= */
+
+function popBalloon(balloon){
+
+  if(balloon.classList.contains("pop")){
+    return;
+  }
+
+  balloon.classList.add("pop");
+
+  popped++;
+
+  document.getElementById("counter").innerText =
+    popped + " / 5";
+
+  createMiniHearts(balloon);
+
+  if(popped === 5){
+
+    setTimeout(function(){
+
+      createConfetti();
+
+      setTimeout(function(){
+
+        showScreen("envelopeScreen");
+
+      },1000);
+
+    },500);
+
+  }
+
+}
+
+
+/* =========================
+   MINI HEARTS
+========================= */
+
+function createMiniHearts(element){
+
+  for(var i=0;i<8;i++){
+
+    var heart = document.createElement("div");
+
+    heart.className = "mini-heart";
+
+    heart.innerText =
+      ["🩷","💗","💕","❤️"]
+      [Math.floor(Math.random()*4)];
+
+    heart.style.left =
+      (element.offsetLeft + 25) + "px";
+
+    heart.style.top =
+      (element.offsetTop + 25) + "px";
+
+    heart.style.setProperty(
+      "--x",
+      (Math.random()*140-70) + "px"
+    );
+
+    heart.style.setProperty(
+      "--y",
+      (Math.random()*-120-30) + "px"
+    );
+
+    document.getElementById("gameScreen")
+      .appendChild(heart);
+
+    setTimeout(function(){
+      heart.remove();
+    },1000);
+
+  }
+
+}
+
+
+/* =========================
+   OPEN ENVELOPE
+========================= */
+
+function openEnvelope(){
+
+  var envelope =
+    document.getElementById("envelope");
+
+  if(envelope.classList.contains("open")){
+    return;
+  }
+
+  envelope.classList.add("open");
+
+  setTimeout(function(){
+
+    showScreen("letterScreen");
+
+  },1600);
+
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+function showFinal(){
+
+  createConfetti();
+
+  showScreen("finalScreen");
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(){
+
+  var symbols = [
+    "🩷",
+    "💗",
+    "💕",
+    "✨",
+    "❤️",
+    "✦"
+  ];
+
+  for(var i=0;i<45;i++){
+
+    var confetti =
+      document.createElement("div");
+
+    confetti.className = "confetti";
+
+    confetti.innerText =
+      symbols[
+        Math.floor(Math.random()*symbols.length)
+      ];
+
+    confetti.style.left =
+      Math.random()*100 + "vw";
+
+    confetti.style.animationDelay =
+      Math.random()*1.5 + "s";
+
+    confetti.style.fontSize =
+      (10 + Math.random()*12) + "px";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(function(){
+      confetti.remove();
+    },4000);
+
+  }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createFloatingHeart(){
+
+  var heart =
+    document.createElement("div");
+
+  heart.innerText =
+    ["🩷","💗","💕","❤️"]
+    [Math.floor(Math.random()*4)];
+
+  heart.style.positi
